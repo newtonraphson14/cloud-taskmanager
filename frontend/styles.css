@@ -1,0 +1,244 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    opacity: 0.9;
+    font-size: 1.1em;
+}
+
+/* Form Section */
+.form-section {
+    padding: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.form-section h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea, select {
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #95a5a6;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Tasks Section */
+.tasks-section {
+    padding: 30px;
+}
+
+.tasks-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.tasks-header h2 {
+    color: #2c3e50;
+}
+
+#taskCount {
+    font-weight: bold;
+    color: #3498db;
+}
+
+/* Task Items */
+.tasks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.task-item {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    border-left: 5px solid #bdc3c7;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.task-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.task-item.high-priority {
+    border-left-color: #e74c3c;
+    background: #ffeaea;
+}
+
+.task-item.medium-priority {
+    border-left-color: #f39c12;
+    background: #fff4e6;
+}
+
+.task-item.low-priority {
+    border-left-color: #27ae60;
+    background: #eafaf1;
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.task-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.task-priority {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.priority-high { background: #e74c3c; color: white; }
+.priority-medium { background: #f39c12; color: white; }
+.priority-low { background: #27ae60; color: white; }
+
+.task-description {
+    color: #7f8c8d;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.task-meta {
+    font-size: 0.9em;
+    color: #95a5a6;
+    display: flex;
+    gap: 15px;
+}
+
+/* Loading Spinner */
+.loading {
+    text-align: center;
+    padding: 40px;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        margin: 10px;
+        border-radius: 10px;
+    }
+    
+    .tasks-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .task-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
