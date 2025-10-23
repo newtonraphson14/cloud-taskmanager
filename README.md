@@ -10,17 +10,23 @@ Simple task management API built with Azure Functions and SQL Database.
 - View all tasks 
 - Data stored in Azure SQL Database
 - REST API ready for frontend
+- **Modern web dashboard** (run `npx live-server frontend`)
 
 ## 🛠️ Tech Used
 - Azure Functions (Node.js)
 - Azure SQL Database
 - Azure CLI for deployment
+- HTML/CSS/JS Frontend
 
-## 📡 API Usage
-
-### Get All Tasks
+## Get All Tasks
 ```bash
 curl -X GET https://ikbar-taskmanager.azurewebsites.net/api/tasks
+```
+
+## Frontend Dashboard
+```bash
+cd frontend
+npx live-server
 ```
 
 ## 📂 Create New Task
